@@ -1,13 +1,17 @@
 export const userColumns = [
-  { field: "id", headerName: "ID", width: 70 },
+  { field: "_id", headerName: "ID", width: 300 },
   {
     field: "user",
     headerName: "User",
-    width: 230,
+    width: 200,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
+          <img
+            className="cellImg"
+            src={params.row.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"}
+            alt="avatar"
+          />
           {params.row.username}
         </div>
       );
@@ -20,22 +24,34 @@ export const userColumns = [
   },
 
   {
-    field: "age",
-    headerName: "Age",
+    field: "country",
+    headerName: "Country",
+    width: 100,
+  },
+
+  {
+    field: "city",
+    headerName: "City",
     width: 100,
   },
   {
-    field: "status",
-    headerName: "Status",
-    width: 160,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
+    field: "phone",
+    headerName: "Phone",
+    width: 200,
   },
+
+  // {
+  //   field: "status",
+  //   headerName: "Status",
+  //   width: 160,
+  //   renderCell: (params) => {
+  //     return (
+  //       <div className={`cellWithStatus ${params.row.status}`}>
+  //         {params.row.status}
+  //       </div>
+  //     );
+  //   },
+  // },
 ];
 
 //temporary data
